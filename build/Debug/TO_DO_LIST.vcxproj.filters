@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Mariu\OneDrive\Dokumenty\C++\Projects\ToDolist\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mariu\OneDrive\Dokumenty\C++\Projects\ToDolist\src\Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mariu\OneDrive\Dokumenty\C++\Projects\ToDolist\src\ToDo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Mariu\OneDrive\Dokumenty\C++\Projects\ToDolist\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5B1920C2-BED5-3584-86B0-8548024344B3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
