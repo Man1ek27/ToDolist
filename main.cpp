@@ -19,10 +19,12 @@ int main(void){
 
     std::cout << "Śiemą" << std::endl;
 
-    Task first("Praca", date, "nie wiem");
+    Task first("Praca", date, "zrobic rozliczanie na nowy samochod i kilka innych rzeczy");
     Task sec("Sporty", date, "tak");
     std::cout << first << std::endl;
     std::cout << sec << std::endl;
+
+    first.PrintDisc();
 
     return 0;
 }

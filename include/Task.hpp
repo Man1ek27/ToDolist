@@ -2,6 +2,8 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
+#include <string>
+#include <sstream>
 
 class Task{
     std::string _title;
@@ -15,4 +17,6 @@ class Task{
         Task(std::string, std::tm, std::string);
 
         friend std::ostream &operator<<(std::ostream &, Task &);
+
+        void PrintDisc();
 };
