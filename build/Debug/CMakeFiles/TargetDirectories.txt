@@ -1,3 +1,0 @@
-C:/Users/Mariu/OneDrive/Dokumenty/C++/Projects/ToDolist/build/Debug/CMakeFiles/TO_DO_LIST.dir
-C:/Users/Mariu/OneDrive/Dokumenty/C++/Projects/ToDolist/build/Debug/CMakeFiles/ALL_BUILD.dir
-C:/Users/Mariu/OneDrive/Dokumenty/C++/Projects/ToDolist/build/Debug/CMakeFiles/ZERO_CHECK.dir

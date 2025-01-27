@@ -1,6 +1,7 @@
 #pragma once 
 #include <iostream>
 #include <ctime>
+#include <iomanip>
 
 class Task{
     std::string _title;
@@ -8,10 +9,10 @@ class Task{
     std::string _disc;
 
     public:
-        static unsigned int _lp;
+        static unsigned int _amount;
+        unsigned int _lp;
         Task() = default;
         Task(std::string, std::tm, std::string);
 
-        void Print();
-        friend std::ostream &operator<<(std::ostream, std::tm);
+        friend std::ostream &operator<<(std::ostream &, Task &);
 };

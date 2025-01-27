@@ -9,21 +9,20 @@
 int main(void){
 
     SetConsoleOutputCP(CP_UTF8);
-    srand(time(NULL));
+    srand(static_cast<unsigned int>(time(NULL)));
 
-    SYSTEMTIME sysTime;
-    GetLocalTime(&sysTime);
 
-    std::tm date = {};
-    date.tm_year = sysTime.wYear - 1900; // Year since 1900
-    date.tm_mon = sysTime.wMonth - 1;   // 0-based month
-    date.tm_mday = sysTime.wDay;
-    date.tm_hour = sysTime.wHour;
-    date.tm_min = sysTime.wMinute;
-    date.tm_sec = sysTime.wSecond;
+    time_t now = time(0);
+    std::tm date;
+    localtime_s(&date, &now);
+
 
     std::cout << "Śiemą" << std::endl;
 
-    Task("Praca", date, "nie wiem");
+    Task first("Praca", date, "nie wiem");
+    Task sec("Sporty", date, "tak");
+    std::cout << first << std::endl;
+    std::cout << sec << std::endl;
+
     return 0;
 }

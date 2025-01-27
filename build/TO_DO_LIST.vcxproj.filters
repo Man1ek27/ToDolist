@@ -4,6 +4,9 @@
     <ClCompile Include="C:\Users\Mariu\OneDrive\Dokumenty\C++\Projects\ToDolist\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Mariu\OneDrive\Dokumenty\C++\Projects\ToDolist\src\Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\Mariu\OneDrive\Dokumenty\C++\Projects\ToDolist\src\ToDo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
