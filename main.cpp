@@ -20,20 +20,22 @@ int main(void){
     ToDo list1;
 
 
-    Task first("Praca", date, "zrobic rozliczanie na nowy samochod i kilka innych rzeczy");
-        Task sec("Sport", date, "bieganie");
-    // for(int i=0; i <5; i++){
-    //     list1.Add(sec);
-    // }
-    // std::cout << first << std::endl;
-    // std::cout << sec << std::endl;
-    list1.Add(first);
-    list1.Add(sec);
+    // Task first("Praca", date, "zrobic rozliczanie na nowy samochod i kilka innych rzeczy");
+    //     Task sec("Sport", date, "bieganie");
+    // // for(int i=0; i <5; i++){
+    // //     list1.Add(sec);
+    // // }
+    // // std::cout << first << std::endl;
+    // // std::cout << sec << std::endl;
+    // list1.Add(first);
+    // list1.Add(sec);
+
+    list1.Read();
 
 
     //first.PrintDisc();
     list1.Print();
-
-    list1.Save();
+    
+    // list1.Save();
     return 0;
 }

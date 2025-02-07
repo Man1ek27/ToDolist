@@ -4,6 +4,12 @@ void ToDo::Add(Task &tsk){
     _list.push_back(tsk);
 }
 
+void ToDo::Add(std::string title, std::tm data, std::string disc){
+    Task temp(title, data, disc);
+    this->Add(temp);
+}
+
+
 void ToDo::Print()const{
     if(_list.empty()){
         std::cout << "PUSTO!" << std::endl;
@@ -45,4 +51,34 @@ void ToDo::Save(){
     std::cout << "done" << std::endl;
 }
    
+
+void ToDo::Read(){
+    std::ifstream File("../../Save_list/saves.txt");
+    std::string data;
+    while (std::getline(File, data)){
+        std::stringstream ss(data);
+        std::string one_data;
+        char dilimiter = '\t';
+
+        std::vector<std::string> one;
+
+        while(std::getline(ss, one_data, dilimiter)){
+            one.push_back(one_data);
+        }
+        
+        std::tm date = {};
+
+        std::istringstream is(one[1]);
+        std::cout << one[1] << std::endl;
+
+        is >> std::get_time(&date, "%H %M %d %m %Y");
+
+        std::cout << date.tm_hour << " "<< date.tm_min<< " " << date.tm_mday<< " " << date.tm_mon << " "<< date.tm_year << std::endl;
+
+        this->Add(one[0], date, one[2]);
+        one.clear();
+    }
+    
+}
+
 
