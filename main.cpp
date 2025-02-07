@@ -30,12 +30,12 @@ int main(void){
     // list1.Add(first);
     // list1.Add(sec);
 
-    list1.Read();
-
+    
 
     //first.PrintDisc();
+    list1.Read();
     list1.Print();
     
-    // list1.Save();
+    list1.Save();
     return 0;
 }

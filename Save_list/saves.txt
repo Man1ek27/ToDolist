@@ -1,2 +1,2 @@
-Praca	22 32 7 0 2025	zrobic rozliczanie na nowy samochod i kilka innych rzeczy
-Sport	22 32 7 0 125	bieganie
+Praca	21 43 7 1 125	zrobic rozliczanie na nowy samochod i kilka innych rzeczy
+Sport	21 43 7 1 125	bieganie

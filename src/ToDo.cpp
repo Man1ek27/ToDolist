@@ -36,7 +36,7 @@ void ToDo::Clear_all(){
 std::ostream &operator<<(std::ostream &os, ToDo &todo){
     for( Task i : todo._list){
         os << i.Get_title() << "\t" 
-        << i.Get_date().tm_hour <<" " << i.Get_date().tm_min <<" " << i.Get_date().tm_mday <<" " << i.Get_date().tm_mon <<" "<< i.Get_date().tm_year
+        << i.Get_date().tm_hour <<" " << i.Get_date().tm_min <<" " << i.Get_date().tm_mday <<" " << i.Get_date().tm_mon+1 <<" "<< i.Get_date().tm_year
         << "\t" << i.Get_disc() << std::endl;
     }
     return os;
@@ -69,14 +69,12 @@ void ToDo::Read(){
         std::tm date = {};
 
         std::istringstream is(one[1]);
-        std::cout << one[1] << std::endl;
 
         is >> std::get_time(&date, "%H %M %d %m %Y");
-
-        std::cout << date.tm_hour << " "<< date.tm_min<< " " << date.tm_mday<< " " << date.tm_mon << " "<< date.tm_year << std::endl;
+        date.tm_year += 1900;
 
         this->Add(one[0], date, one[2]);
-        one.clear();
+        
     }
     
 }
