@@ -26,3 +26,23 @@ void ToDo::Clear_all(){
     _list.clear();
 }
 
+
+std::ostream &operator<<(std::ostream &os, ToDo &todo){
+    for( Task i : todo._list){
+        os << i.Get_title() << "\t" 
+        << i.Get_date().tm_hour <<" " << i.Get_date().tm_min <<" " << i.Get_date().tm_mday <<" " << i.Get_date().tm_mon <<" "<< i.Get_date().tm_year
+        << "\t" << i.Get_disc() << std::endl;
+    }
+    return os;
+}
+
+void ToDo::Save(){
+    std::ofstream File("../../Save_list/saves.txt");
+    if(!File.good()){
+        std::cout << "BŁĄD zapisu" << std::endl;
+    }
+    File << *this;
+    std::cout << "done" << std::endl;
+}
+   
+

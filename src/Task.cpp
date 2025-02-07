@@ -29,7 +29,7 @@ std::ostream& operator<<(std::ostream &os, const Task &task){
 }
 
 
-void Task::PrintDisc(){
+void Task::PrintDisc()const{
     std::istringstream iss(_disc);
     std::string word;
 
@@ -51,5 +51,15 @@ void Task::PrintDisc(){
     std::cout << std::setw(40) << std::setfill('=') << "" << std::endl;
 }
 
+
+std::string Task::Get_title(){
+    return _title;
+}
+std::tm Task::Get_date(){
+    return _date;
+}
+std::string Task::Get_disc(){
+    return _disc;
+}
 
 

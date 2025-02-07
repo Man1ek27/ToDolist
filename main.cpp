@@ -33,8 +33,7 @@ int main(void){
 
     //first.PrintDisc();
     list1.Print();
-    list1.Delete(1);
-    list1.Clear_all();
-    list1.Print();
+
+    list1.Save();
     return 0;
 }

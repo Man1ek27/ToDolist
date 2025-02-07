@@ -18,5 +18,11 @@ class Task{
 
         friend std::ostream &operator<<(std::ostream &, const Task &);
 
-        void PrintDisc();
+        void PrintDisc()const;
+
+        std::string Get_title();
+        std::tm Get_date();
+        std::string Get_disc();
+
+
 };
