@@ -5,7 +5,7 @@ unsigned int Task::_amount=0;
 Task::Task(std::string title, std::tm date, std::string disc): _title{title}, _date{date}, _disc{disc}, _lp{++_amount}{
 }
 
-std::ostream& operator<<(std::ostream &os, Task &task){
+std::ostream& operator<<(std::ostream &os, const Task &task){
     int titleL = static_cast<int>(task._title.length());
     int first = (18 - 2 - titleL) / 2 +1;
     int sec = (18 - 2 - titleL) / 2 + titleL;
@@ -49,7 +49,6 @@ void Task::PrintDisc(){
     }
     std::cout  << std::setw(letters_left+3) << std::setfill(' ') << std::right  << " ="<<std::endl;
     std::cout << std::setw(40) << std::setfill('=') << "" << std::endl;
- 
 }
 
 

@@ -4,6 +4,7 @@
 #include <ctime>
 
 #include "include/Task.hpp"
+#include "include/ToDo.hpp"
 
 
 int main(void){
@@ -16,15 +17,24 @@ int main(void){
     std::tm date;
     localtime_s(&date, &now);
 
+    ToDo list1;
 
-    std::cout << "Śiemą" << std::endl;
 
     Task first("Praca", date, "zrobic rozliczanie na nowy samochod i kilka innych rzeczy");
-    Task sec("Sporty", date, "tak");
-    std::cout << first << std::endl;
-    std::cout << sec << std::endl;
+        Task sec("Sport", date, "bieganie");
+    // for(int i=0; i <5; i++){
+    //     list1.Add(sec);
+    // }
+    // std::cout << first << std::endl;
+    // std::cout << sec << std::endl;
+    list1.Add(first);
+    list1.Add(sec);
 
-    first.PrintDisc();
 
+    //first.PrintDisc();
+    list1.Print();
+    list1.Delete(1);
+    list1.Clear_all();
+    list1.Print();
     return 0;
 }

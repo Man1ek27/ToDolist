@@ -16,7 +16,7 @@ class Task{
         Task() = default;
         Task(std::string, std::tm, std::string);
 
-        friend std::ostream &operator<<(std::ostream &, Task &);
+        friend std::ostream &operator<<(std::ostream &, const Task &);
 
         void PrintDisc();
 };
