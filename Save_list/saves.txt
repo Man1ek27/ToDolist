@@ -1,3 +1,6 @@
+Zadanie 	1 1 1 2 1901	Zadanie domowe
+Zeszyt	1 1 1 1 1901	kupic zaeszyt
+Prezent	7 31 2 10 2021	kupic ładny prezent
 Sport	21 43 7 2 2023	bieganie
 Wakacje	21 43 7 3 2026	Nie mam pojecia
 Praca	21 43 7 2 2027	zrobic rozliczanie na nowy samochod i kilka innych rzeczy

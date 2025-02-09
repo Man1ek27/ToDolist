@@ -8,11 +8,13 @@
 #include <ctime>
 #include <algorithm>
 #include <functional>
+#include <windows.h>
 
 #include "Task.hpp"
 
 class ToDo{
     std::vector<Task> _list;
+    int _exp_index = -1;
 
     public:
         void Add(Task &);
@@ -25,6 +27,10 @@ class ToDo{
         void Discr(int)const;
         void Sort_date();
         void Check_if_expired();
+        void Delete_expired();
+
+        void Print_menu();
+        void Operation(int);
         
 
         friend std::ostream &operator<<(std::ostream &, ToDo &);

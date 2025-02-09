@@ -33,7 +33,7 @@ std::ostream& operator<<(std::ostream &os, const Task &task){
         << ((task._date.tm_min<10)?"0":"")<< task._date.tm_min << " " 
 
         <<((task._date.tm_mday <10)?"0":"") << task._date.tm_mday << "." 
-        << ((task._date.tm_mon <10)?"0":"") << task._date.tm_mon +1 << "." 
+        << ((task._date.tm_mon <9)?"0":"") << task._date.tm_mon +1 << "." 
         << task._date.tm_year +1900
 
         << " =" << std::endl;

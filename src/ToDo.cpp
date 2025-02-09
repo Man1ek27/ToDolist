@@ -95,14 +95,107 @@ void ToDo::Check_if_expired(){
     bool expired = false;
     time_t now = time(0);
     std::tm date;
+    bool once = true;
     localtime_s(&date, &now);
     for(auto i = _list.rbegin(); i != _list.rend() ; ++i){
         if(std::mktime(const_cast<std::tm*>(&i->Get_date())) < std::mktime(&date)){
             (*i).Set_expired();
+            if(once) _exp_index = (*i)._lp;
         } 
     }
-    
 }
+
+void ToDo::Delete_expired(){
+    if(_exp_index < 0){
+        return;
+    }
+    _list.erase(_list.begin(), _list.begin() + _exp_index +1);
+}
+
+
+void ToDo::Print_menu(){
+    system("cls");
+    std::cout << "Your ToDo list" << std::endl
+    << "[1]: Print Your ToDo list" << std::endl
+    << "[2]: Add new Task" << std::endl
+    << "[3]: Delete Task" << std::endl
+    << "[4]: See discription of Task" << std::endl
+    << "[5]: Delete expired Tasks" << std::endl
+    << "[6]: Clear your ToDo list" << std::endl
+    << "[0]: To exit" << std::endl
+    << "Choose function: ";  
+}
+
+void ToDo::Operation(int decision){
+    std::string task;
+    std::tm date;
+    std::string disc;
+
+    switch(decision){
+        case 0:
+            system("cls");
+            std::cout << "Good bye!!" << std::endl;
+            exit(0);
+        break;
+        case 1:
+            system("cls");
+            this->Print();
+            system("pause");
+        break;
+
+        case 2:
+            system("cls");
+            std::cout << "Insert title of the Task: ";
+            std::getline(std::cin >> std::ws, task);
+
+            std::cout << "\nInsert Date of the Task: " << std::endl;
+            std::cout << "Year:";
+            std::cin >> date.tm_year;
+
+            std::cout << "Month:";
+            std::cin >> date.tm_mon;
+
+            std::cout << "Day:";
+            std::cin >> date.tm_mday;
+            date.tm_mon--;
+            std::cout << "Hour:";
+            std::cin >> date.tm_hour;
+
+            std::cout << "Minute:";
+            std::cin >> date.tm_min;
+
+            std::cout << "\nInsert Discription of the Task: ";
+            std::getline(std::cin >> std::ws, disc);
+
+            this->Add(task, date, disc);
+            system("pause");
+
+        break;
+
+        case 3:
+            system("cls");
+            std::cout << "Enter lp of Task u want to delete:";
+            int index;
+            std::cin >> index;
+            this->Delete(index);
+            system("pause");
+
+        break;
+
+        case 4:
+
+        break;
+        case 5:
+
+        break;
+
+        case 6:
+
+        break;
+    }
+}
+
+
 
 
 
