@@ -9,7 +9,7 @@
 
 #include "Task.hpp"
 
-class ToDo: Task{
+class ToDo{
     std::vector<Task> _list;
 
     public:
@@ -20,6 +20,7 @@ class ToDo: Task{
         void Clear_all();
         void Save();
         void Read();
+        void Discr(int)const;
         
 
         friend std::ostream &operator<<(std::ostream &, ToDo &);

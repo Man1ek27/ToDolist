@@ -1,2 +1,3 @@
-Praca	21 43 7 1 125	zrobic rozliczanie na nowy samochod i kilka innych rzeczy
-Sport	21 43 7 1 125	bieganie
+Praca	21 43 7 2 2025	zrobic rozliczanie na nowy samochod i kilka innych rzeczy
+Sport	21 43 7 2 2025	bieganie
+Wakacje	23 1 9 12 2026	Nie mam pojecia

@@ -21,8 +21,13 @@ std::ostream& operator<<(std::ostream &os, const Task &task){
     os << std::setw(20) << std::setfill('=') << "" << std::endl;
     
     os << std::setfill(' ') 
-            << "= " <<((task._date.tm_hour <10)?"0":"") << task._date.tm_hour <<":" << ((task._date.tm_hour<10)?"0":"")<< task._date.tm_min << " " 
-        <<((task._date.tm_mday <10)?"0":"") << task._date.tm_mday << "." << ((task._date.tm_mon <10)?"0":"") << task._date.tm_mon +1 << "." << task._date.tm_year +1900
+        << "= " <<((task._date.tm_hour <10)?"0":"") << task._date.tm_hour <<":" 
+        << ((task._date.tm_min<10)?"0":"")<< task._date.tm_min << " " 
+
+        <<((task._date.tm_mday <10)?"0":"") << task._date.tm_mday << "." 
+        << ((task._date.tm_mon <10)?"0":"") << task._date.tm_mon +1 << "." 
+        << task._date.tm_year +1900
+        
         << " =" << std::endl;
     os << std::setw(20) << std::setfill('=') << "" << std::endl;  
     return os;

@@ -35,6 +35,8 @@ int main(void){
     //first.PrintDisc();
     list1.Read();
     list1.Print();
+
+    list1.Discr(0);
     
     list1.Save();
     return 0;
