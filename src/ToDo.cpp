@@ -84,4 +84,25 @@ void ToDo::Discr(int index)const{
 }
 
 
+void ToDo::Sort_date(){
+    std::sort(_list.begin(), _list.end(), [](const Task &a, const Task &b) {
+        return std::mktime(const_cast<std::tm*>(&a.Get_date())) < std::mktime(const_cast<std::tm*>(&b.Get_date()));
+    });
+}
+
+
+void ToDo::Check_if_expired(){
+    bool expired = false;
+    time_t now = time(0);
+    std::tm date;
+    localtime_s(&date, &now);
+    for(auto i = _list.rbegin(); i != _list.rend() ; ++i){
+        if(std::mktime(const_cast<std::tm*>(&i->Get_date())) < std::mktime(&date)){
+            (*i).Set_expired();
+        } 
+    }
+    
+}
+
+
 

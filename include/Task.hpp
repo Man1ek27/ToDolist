@@ -9,6 +9,7 @@ class Task{
     std::string _title;
     std::tm _date;
     std::string _disc;
+    bool _expired = false;
 
     public:
         static unsigned int _amount;
@@ -21,8 +22,9 @@ class Task{
         void PrintDisc()const;
 
         std::string Get_title();
-        std::tm Get_date();
+        std::tm Get_date()const;
         std::string Get_disc();
 
+        void Set_expired();
 
 };

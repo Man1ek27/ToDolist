@@ -11,6 +11,14 @@ std::ostream& operator<<(std::ostream &os, const Task &task){
     int sec = (18 - 2 - titleL) / 2 + titleL;
     if(titleL%2 ==1) sec++;
 
+    if(task._expired){
+        os << std::setw(20) << std::setfill('=') << "" << std::endl;
+        os << std::setfill(' ') 
+        << "=" 
+        << std::setw(13) << std::right << "(EXPIRED)"
+        << std::setw(5) << std::left << ""
+        << "=" << std::endl; 
+    }
     os << std::setw(20) << std::setfill('=') << "" << std::endl;
     os << std::setfill(' ') 
         << "=" 
@@ -27,7 +35,7 @@ std::ostream& operator<<(std::ostream &os, const Task &task){
         <<((task._date.tm_mday <10)?"0":"") << task._date.tm_mday << "." 
         << ((task._date.tm_mon <10)?"0":"") << task._date.tm_mon +1 << "." 
         << task._date.tm_year +1900
-        
+
         << " =" << std::endl;
     os << std::setw(20) << std::setfill('=') << "" << std::endl;  
     return os;
@@ -60,11 +68,15 @@ void Task::PrintDisc()const{
 std::string Task::Get_title(){
     return _title;
 }
-std::tm Task::Get_date(){
+std::tm Task::Get_date()const{
     return _date;
 }
 std::string Task::Get_disc(){
     return _disc;
+}
+
+void Task::Set_expired(){
+    _expired = true;
 }
 
 
