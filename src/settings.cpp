@@ -11,3 +11,4 @@ void settings(){
     std::tm date;
     localtime_s(&date, &now);
 }
+
