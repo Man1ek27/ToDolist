@@ -9,7 +9,6 @@
 #include <algorithm>
 #include <functional>
 #include <windows.h>
-
 #include "Task.hpp"
 
 class ToDo{

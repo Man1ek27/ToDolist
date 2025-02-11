@@ -27,6 +27,7 @@ int main(void){
             std::cout << "ERROR: wrong data inserted, try again";
             std::cin.clear();
             std::cin.ignore();
+            continue;
         }
 
         list1.Operation(decision);
@@ -35,19 +36,5 @@ int main(void){
 
         list1.Save();
     }
-    
-
-    //first.PrintDisc();
-    // list1.Read();
-    // list1.Print();
-    
-    // //list1.Discr(0);
-    // list1.Sort_date();
-    // list1.Check_if_expired();
-    // list1.Print();
-    // list1.Delete_expired();
-    // list1.Print();
-    
-    // list1.Save();
     return 0;
 }

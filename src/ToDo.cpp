@@ -158,6 +158,11 @@ void ToDo::Operation(int decision){
             std::cout << "Year:";
             std::cin >> date.tm_year;
             if(std::cin.fail()){
+                std::cin.clear(); 
+                std::cin.ignore();
+
+                std::cout << "ERROR: inserted wrong data" << std::endl;
+                system("pause");
                 return;
             }
             date.tm_year -= 1900;
@@ -165,24 +170,44 @@ void ToDo::Operation(int decision){
             std::cout << "Month:";
             std::cin >> date.tm_mon;
             if(std::cin.fail()){
+                std::cin.clear(); 
+                std::cin.ignore();
+
+                std::cout << "ERROR: inserted wrong data" << std::endl;
+                system("pause");
                 return;
             }
 
             std::cout << "Day:";
             std::cin >> date.tm_mday;
             if(std::cin.fail()){
+                std::cin.clear(); 
+                std::cin.ignore();
+
+                std::cout << "ERROR: inserted wrong data" << std::endl;
+                system("pause");
                 return;
             }
             date.tm_mon--;
             std::cout << "Hour:";
             std::cin >> date.tm_hour;
             if(std::cin.fail()){
+                std::cin.clear(); 
+                std::cin.ignore();
+
+                std::cout << "ERROR: inserted wrong data" << std::endl;
+                system("pause");
                 return;
             }
 
             std::cout << "Minute:";
             std::cin >> date.tm_min;
             if(std::cin.fail()){
+                std::cin.clear(); 
+                std::cin.ignore();
+
+                std::cout << "ERROR: inserted wrong data" << std::endl;
+                system("pause");
                 return;
             }
 
