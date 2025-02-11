@@ -14,9 +14,9 @@
 
 class ToDo{
     std::vector<Task> _list;
-    int _exp_index = -1;
-
+    
     public:
+    int _exp_index = -1;
         void Add(Task &);
         void Add(std::string, std::tm, std::string);
         void Print() const;

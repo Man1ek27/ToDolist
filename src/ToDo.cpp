@@ -24,6 +24,9 @@ void ToDo::Print()const{
 }
 
 void ToDo::Delete(int index){
+    if(_list.empty()){
+        return;
+    }
     _list.erase(_list.begin() + index -1);
 }
 
@@ -92,7 +95,6 @@ void ToDo::Sort_date(){
 
 
 void ToDo::Check_if_expired(){
-    bool expired = false;
     time_t now = time(0);
     std::tm date;
     bool once = true;
@@ -100,7 +102,10 @@ void ToDo::Check_if_expired(){
     for(auto i = _list.rbegin(); i != _list.rend() ; ++i){
         if(std::mktime(const_cast<std::tm*>(&i->Get_date())) < std::mktime(&date)){
             (*i).Set_expired();
-            if(once) _exp_index = (*i)._lp;
+            if(once){
+                _exp_index = (*i)._lp;
+                once = false;
+            }
         } 
     }
 }
@@ -109,7 +114,7 @@ void ToDo::Delete_expired(){
     if(_exp_index < 0){
         return;
     }
-    _list.erase(_list.begin(), _list.begin() + _exp_index +1);
+    _list.erase(_list.begin(), _list.begin() + _exp_index);
 }
 
 
@@ -130,6 +135,7 @@ void ToDo::Operation(int decision){
     std::string task;
     std::tm date;
     std::string disc;
+    int index;
 
     switch(decision){
         case 0:
@@ -151,6 +157,7 @@ void ToDo::Operation(int decision){
             std::cout << "\nInsert Date of the Task: " << std::endl;
             std::cout << "Year:";
             std::cin >> date.tm_year;
+            date.tm_year -= 1900;
 
             std::cout << "Month:";
             std::cin >> date.tm_mon;
@@ -175,7 +182,6 @@ void ToDo::Operation(int decision){
         case 3:
             system("cls");
             std::cout << "Enter lp of Task u want to delete:";
-            int index;
             std::cin >> index;
             this->Delete(index);
             system("pause");
@@ -183,14 +189,27 @@ void ToDo::Operation(int decision){
         break;
 
         case 4:
-
+            system("cls");
+            std::cout << "Enter lp of Task u want to see discription of:";
+            std::cin >> index;
+            this->Discr(index-1);
+            system("pause");
         break;
         case 5:
-
+            system("cls");
+            std::cout << "Deleted expired tasks..." << std::endl;
+            this->Delete_expired();
+            system("pause");
         break;
 
         case 6:
-
+            system("cls");
+            std::cout << "Deleting your task list ..." << std::endl;
+            this->Clear_all();
+            system("pause");
+        break;
+        default:
+            return;
         break;
     }
 }
