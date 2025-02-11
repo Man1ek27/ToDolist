@@ -30,6 +30,8 @@ int main(void){
         }
 
         list1.Operation(decision);
+        list1.Sort_date();
+
 
         list1.Save();
     }
